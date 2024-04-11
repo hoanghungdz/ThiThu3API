@@ -58,10 +58,10 @@ router.post('/add-sach', async (req, res) => {
 });
 // tim kiếm
 router.get('/search-sach-by-name', async (req, res) => {
-    const { ten } = req.query;
+    const { tieu_de } = req.query;
     try {
         const data = await SachModels.find({
-            ten: { $regex: new RegExp(ten, "i") },
+            tieu_de: { $regex: new RegExp(tieu_de, "i") },
         }).sort({ createdAt: -1 });
 
         if (data) {
